@@ -17,19 +17,11 @@
 			Определяем из запроса, какой модуль должен обработать запрос
 			находим этот модуль в списке и передаем в draw_page()
 			*/
-
-			var_dump($_SERVER);
 			
 			$uri = $_SERVER['REQUEST_URI'];
-
-			echo $uri;			
-			
-			$uri_cut = substr($uri, 5);
-			
+			$uri_cut = substr($uri, 5);			
 			$mod_name = strstr($uri_cut, '/', true);
-			
-			echo '<br>' . $mod_name;
-			
+
 			$mod = $this->modules[$mod_name];
 			
 			if(isset($mod))
@@ -45,10 +37,6 @@
 			if (file_exists($filename) && is_readable ($filename)) 
 			{
 				$mods = parse_ini_file($filename, true);	
-				
-				var_dump($mods);
-
-				echo '<br>';				
 				
 				if(isset($mods))
 				{

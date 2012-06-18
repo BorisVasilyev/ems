@@ -6,6 +6,9 @@
 	{
 		public function draw_page($modules_list, IEmsModule $cur_module)
 		{
+			/*
+			Рисуем окружение страницы и внутри div'а content - рисует текущий модуль
+			*/
 			$this->draw_head();
 			
 			$this->draw_body();
@@ -15,27 +18,44 @@
 			$this->draw_bottom();
 		}
 		
+		/*
 		private function draw_self()
 		{
 		}
+		*/
 		
 		private function draw_head()
 		{
-			echo '<html>
+			?>
+			
+			<html>
 			<head>
-				<title> Simple ems </title>
+				<title> EMS </title>
+				<style type="text/css" media="all">
+			    		@import url(../css/div.css);
+			  	</style>
 			</head>
-			';
+	
+			<?php
 		}
 		
 		private function draw_body()
 		{
-			echo '<body>';
+			?>
+			
+			<body>
+			<div class="container">
+			
+			<?php
 		}
 		
 		private function draw_bottom()
 		{
-			echo '</body></html>';
+			?>
+			</div>
+			</body>
+			</html>
+			<?php
 		}
 	}
 

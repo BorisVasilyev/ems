@@ -1,33 +1,44 @@
-.header
+.container
 {
 	width: 70%;
-	background: #66a3d2;
-	padding-left : 20px;
+	background: #ff0000;
 	border: none;
 	float: left;
 	margin: 0 15% 0 15%;
+	min-height: 700px;
 }
-.body 
+.header
 {
-    width: 70%;
-    background: #ffffff;
-    padding-left : 20px;
-    padding: 10px;
-    min-height: 700px;
-    border: none;
-    float: left;
-    margin: 0 15% 0 15%;
+	width: 100%;
+	background: #66a3d2;
+	border: none;
+	float: left;
+	height: 100px;
+	text-align: center;
 }
 .menu 
 {
-	width: 70%;
-	background: #ffffff;
-	padding-bottom : 10px; 
-	padding-top: 10px;
-	padding-left: 20px;
+	width: 100%;
+	background: #ff00ff;
 	border: none;
 	float: left;
-	margin: 0 15% 0 15%;
+	height: 50px;
+}
+.content 
+{
+	 width: 100%;
+    background: #0000ff;
+    min-height: 550px;
+    border: none;
+    float: left;
+}
+.bottom 
+{
+	 width: 100%;
+    background: #00ffff;
+    height: 50px;
+    border: none;
+    float: left;
 }
 .menu_text
 {
@@ -35,8 +46,4 @@
 	font-size: 20pt;
 	text-decoration: underline;
 	display: inline-block;
-}
-body
-{
-	background-image:url('../images/back.png');
 }
