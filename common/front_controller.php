@@ -13,9 +13,28 @@
 			
 		public function process_request()
 		{
-			foreach($this->mods_list as $i => $value)
+			/*
+			Определяем из запроса, какой модуль должен обработать запрос
+			находим этот модуль в списке и передаем в draw_page()
+			*/
+
+			var_dump($_SERVER);
+			
+			$uri = $_SERVER['REQUEST_URI'];
+
+			echo $uri;			
+			
+			$uri_cut = substr($uri, 5);
+			
+			$mod_name = strstr($uri_cut, '/', true);
+			
+			echo '<br>' . $mod_name;
+			
+			$mod = $this->modules[$mod_name];
+			
+			if(isset($mod))
 			{
-				$this->tmp_pres->draw_module($value);
+				$this->tmp_pres->draw_page($this->mods_data, $mod);
 			}
 		}
 		
@@ -39,13 +58,15 @@
 						
 						$mod = new $value['class_name'];
 						
-						$this->mods_list[$value['name']] = $mod;
+						$this->modules[$value['name']] = $mod;
 					}
 				}						
 			}
 		}
 		
-		private $mods_list;
+		private $modules; // Массив ссылок на объекты модулей
+
+		private $mods_data; // Массив данных о модулях (название, ссылка и т.п.) из конфигурационного файла
 		
 		private $tmp_pres;
 	}
@@ -53,31 +74,5 @@
 	$contr = new FrontController();
 	
 	$contr->process_request();
-	
-	/*
-	echo 'Called front controller';
-	
-	echo '<p> Controller called for URI: ' . $_SERVER[ 'REQUEST_URI' ];
-
-	echo '<ul>';
-	
-	foreach( $_SERVER as $key => $val )
-	{
-	   echo '<li><b>' . $key . ':</b>
-	    <tt>'. $val . '</tt></li>';
-	}
-	
-	echo '</ul>';
-
-	$module_name = 'news';
-	
-	$mod_class_name = $module_name . 'Module';
-
-	include $_SERVER['DOCUMENT_ROOT'].'/ems/modules/'. $module_name . '.php';
-	
-	$module_instance = new $mod_class_name();
-	
-	echo $module_instance->get_caption();
-	*/
 
 ?>
