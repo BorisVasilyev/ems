@@ -1,10 +1,10 @@
 <?php
 
-	public interface IEmsModule
+	interface IEmsModule
 	{
-		public function process_request($uri);
-		
-		public function get_caption();
+		function process_request($uri);
+		 
+		function get_caption();
 	}
 
 ?>
