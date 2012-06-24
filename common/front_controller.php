@@ -16,7 +16,7 @@
 			/*
 			Определяем из запроса, какой модуль должен обработать запрос
 			находим этот модуль в списке и передаем в draw_page()
-			*/
+			*/	
 			
 			$uri = $_SERVER['REQUEST_URI'];
 			$uri_cut = substr($uri, 5);			
@@ -28,6 +28,12 @@
 			{
 				$this->tmp_pres->draw_page($this->mods_data, $mod);
 			}
+			else if(!strpos($uri_cut, '/'))
+			{
+				$mod = $this->modules[$uri_cut];
+				
+				$this->tmp_pres->draw_page($this->mods_data, $mod);
+			}
 		}
 		
 		private function load_modules()
@@ -36,11 +42,11 @@
 			
 			if (file_exists($filename) && is_readable ($filename)) 
 			{
-				$mods = parse_ini_file($filename, true);	
+				$this->mods_data = parse_ini_file($filename, true);	
 				
-				if(isset($mods))
+				if(isset($this->mods_data))
 				{
-					foreach($mods as $i => $value)
+					foreach($this->mods_data as $i => $value)
 					{
 						include $_SERVER['DOCUMENT_ROOT'].'/ems/' . $value['file_path'];
 						

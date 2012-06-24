@@ -9,7 +9,7 @@
 			return 'Сотрудники';
 		}
 		
-		public function process_request($uri) 
+		public function process_request() 
 		{
 		}
 	}

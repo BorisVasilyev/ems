@@ -2,7 +2,7 @@
 
 	interface IEmsModule
 	{
-		function process_request($uri);
+		function process_request();
 		 
 		function get_caption();
 	}

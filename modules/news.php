@@ -9,7 +9,7 @@
 			return 'Новости';
 		}
 		
-		public function process_request($uri) 
+		public function process_request() 
 		{
 		}
 	}

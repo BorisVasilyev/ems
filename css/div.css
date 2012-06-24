@@ -1,44 +1,45 @@
 .container
 {
-	width: 70%;
+	width: 900px;
 	background: #ff0000;
-	border: none;
-	float: left;
-	margin: 0 15% 0 15%;
+	margin: 0 auto;
 	min-height: 700px;
 }
 .header
 {
-	width: 100%;
+	width: 880px;
 	background: #66a3d2;
-	border: none;
 	float: left;
-	height: 100px;
+	height: 80px;
 	text-align: center;
+	padding: 10px;
 }
 .menu 
 {
-	width: 100%;
+	width: 880px;
 	background: #ff00ff;
 	border: none;
 	float: left;
-	height: 50px;
+	min-height: 30px;
+	padding: 10px;
 }
 .content 
 {
-	 width: 100%;
-    background: #0000ff;
-    min-height: 550px;
+	 width: 880px;
+    background: #BFA1AD;
+    min-height: 530px;
     border: none;
     float: left;
+    padding: 10px;
 }
 .bottom 
 {
-	 width: 100%;
+	 width: 880px;
     background: #00ffff;
-    height: 50px;
+    min-height: 30px;
     border: none;
     float: left;
+    padding: 10px;
 }
 .menu_text
 {
@@ -46,4 +47,8 @@
 	font-size: 20pt;
 	text-decoration: underline;
 	display: inline-block;
+}
+body
+{
+	background-image:url('/ems/images/back.png');
 }
