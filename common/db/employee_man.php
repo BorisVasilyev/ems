@@ -1,6 +1,6 @@
 <?php
 
-class DBNewsManager
+class DBEmployeeManager
 {
 	public function get_news()
 	{
